@@ -13,8 +13,18 @@ pub fn capitalize_first(input: &str) -> String {
     match c.next() {
         None => String::new(),
         Some(first) => {
-            c[0..] = first.to_ascii_uppercase();
+            &mut first.to_ascii_uppercase();
             c.as_str().to_string()
+            // c.map(|x| {
+            //     println!("first: {}, x: {}", first, x);
+            //     if x == first {
+            //         println!("Entrou 1: {}", x);
+            //         first.to_ascii_uppercase()
+            //     } else { 
+            //         println!("Entrou 2: {}", x);
+            //         x 
+            //     }
+            // }).collect()
         }
     }
 
